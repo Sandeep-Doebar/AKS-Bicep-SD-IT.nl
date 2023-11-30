@@ -11,7 +11,7 @@ parameters:
   - name: location
     displayName: 'Resource Location'
     type: string
-    default: 'uksouth'
+    default: 'westeurope'
   - name: prefix
     displayName: 'Environment Prefix'
     type: string
@@ -135,4 +135,4 @@ steps:
     scriptLocation: inlineScript
     inlineScript: |
       az group create --name "$(resourceGroupName)" --location ${{ parameters.location }}
-      az deployment group create --name "${{ parameters.clusterName }}-deploy" --resource-group "$(resourceGroupName)" --template-file deploy.bicep --parameters deploy.parameters.json
+      az deployment group create --name "${{ parameters.clusterName }}-deploy" --resource-group "$(resourceGroupName)" --template-file deploy.bicep --parameters ./configs/deploy.parameters.json
