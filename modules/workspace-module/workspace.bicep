@@ -18,7 +18,7 @@ param workspaceTier string
 
  
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
-  name: '${prefix}-oms-${clusterName}-${resourceGroup().location}'
+  name: '${prefix}-oms-${clusterName}-${location}'
   location: location
   properties: {
     sku: {
