@@ -8,10 +8,12 @@ param vnetAddressPrefixes array
 param subnetAddressPrefix string
 @description('Tags for the resources')
 param tags object
- 
+@description('Resource location')
+param location string = resourceGroup().location
+
 resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: vnetName
-  location: resourceGroup().location
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: vnetAddressPrefixes

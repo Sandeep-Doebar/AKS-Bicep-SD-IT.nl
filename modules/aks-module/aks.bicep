@@ -56,7 +56,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10
   name: logAnalyticsWork
 }
 
- 
+//https://learn.microsoft.com/en-us/azure/templates/microsoft.containerservice/managedclusters?pivots=deployment-language-bicep
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
   name: '${prefix}-aks-${clusterName}-${location}'
   location: location
